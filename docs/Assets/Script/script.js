@@ -1,7 +1,5 @@
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
 function writePassword() {
 
   var password = generatePassword();
@@ -10,8 +8,6 @@ function writePassword() {
   passwordText.value = password;
 }
 
-
-      //ALL MY WORK BELOW
 function generatePassword(){
 
   var password = ""
@@ -46,10 +42,12 @@ function generatePassword(){
     var numerals = "1234567890"
     var special = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
 
-    //leaving the selected cahracters blank 
     var selectChars = ""
 
-    //adds only the users selected characters to the selected characters variable
+    //adds only the users selected characters to the selected characters
+    if (!lowCaseConfirm && !upCaseConfirm && !numeralsConfirm && !specialConfirm) {
+      alert("Password must have at least one character set");
+    }
     if (lowCaseConfirm === true){ 
       selectChars = selectChars += lowCase;
     }
